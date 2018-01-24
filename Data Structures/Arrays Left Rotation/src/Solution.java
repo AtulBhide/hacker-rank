@@ -1,13 +1,24 @@
 import java.util.Scanner;
 
+/*
+ * @author: Atul Bhide
+ * Hacker Rank (Cracking the Coding Interview)
+ * 
+ * Arrays: Left Rotation
+ * 
+ * Given an array of  integers and a number, , perform  left rotations on the array. Then print the updated array as a single line of space-separated integers.
+ */
+
 public class Solution {
 
     public static int[] arrayLeftRotation(int[] a, int n, int k) {
     	int retVals[] = new int[n];
-    	
+   
+    	// If K [rotaion count] > N [Size of the Array] we cut it down to size
     	if(k >= n)
     		k %= n;
     	
+    	// With K < N the logic becomes simple
     	for(int x = 0; x < n; x++) {
     		retVals[x] = a[(x+k)%n];
     	}
